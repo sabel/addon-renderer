@@ -18,7 +18,7 @@ class Renderer_Smarty extends Sabel_View_Renderer
     require_once ("Smarty/Smarty.class.php");
     
     $smarty = new Smarty();
-    $smarty->compile_dir = COMPILED_DIR_PATH . DS;
+    $smarty->compile_dir = COMPILE_DIR_PATH . DS;
     
     /*
     if ((ENVIRONMENT & PRODUCTION) > 0) {
@@ -37,7 +37,7 @@ class Renderer_Smarty extends Sabel_View_Renderer
     
     if ($_tpl_path === null || !is_file($_tpl_path)) {
       $hash = $this->createHash($_tpl_contents);
-      $_tpl_path = COMPILED_DIR_PATH . DS . $hash;
+      $_tpl_path = COMPILE_DIR_PATH . DS . $hash;
       file_put_contents($_tpl_path, $_tpl_contents);
     }
     

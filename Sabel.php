@@ -17,7 +17,7 @@ class Renderer_Sabel extends Sabel_View_Renderer
     if ($sbl_tpl_path === null) {
       $compiledPath = $this->getCompileFilePath($this->createHash($sbl_template));
     } else {
-      $compiledPath = COMPILED_DIR_PATH . substr($sbl_tpl_path, strlen(RUN_BASE . DS . MODULES_DIR_NAME));
+      $compiledPath = COMPILE_DIR_PATH . substr($sbl_tpl_path, strlen(RUN_BASE . DS . MODULES_DIR_NAME));
     }
     
     $this->makeCompileFile($sbl_template, $compiledPath);
@@ -72,7 +72,7 @@ class Renderer_Sabel extends Sabel_View_Renderer
   
   protected function getCompileFilePath($name)
   {
-    return COMPILED_DIR_PATH . DS . $name;
+    return COMPILE_DIR_PATH . DS . $name;
   }
 }
 
